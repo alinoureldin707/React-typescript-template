@@ -1,46 +1,109 @@
-# Getting Started with Create React App
+# `Introduction`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This template was made as default template for all react typescript projects. It took care with security purposes and authentication simplicity.
 
-## Available Scripts
+# `Installation`
 
-In the project directory, you can run:
+```sh
+  npm install
+```
 
-### `npm start`
+## `Structure`
+- `src` : Contains all the application code
+- `app` : Contains your code that is going to be configured and updated
+- `components` : Are the reusable components
+- `routes` : The routes that are corresponding to your pages
+- `pages` : Lazy loaded pages that ensures not to reload a component unless it is used
+- `utils` : Contains token validations, some useful functions and contants
+- `redux` : That uses the redux toolkit and slices
+- `contexts` : Contains the auth context that is used as hook in the useAuth in the `hooks` folder
+- `services` : Has the localstorage operations
+- `axios.ts` : configured version of the axios that has a base url for all the application 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## `Private Routes`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The private route allows routes to be visited under a condition usually the isAuthenticated route
 
-### `npm test`
+## `Types`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Folder that defines the types of the request and response mainly
 
-### `npm run build`
+## `Package.json`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh{
+  "name": "admin-panel",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.7.0",
+    "@reduxjs/toolkit": "^1.8.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "dot-env": "^0.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "dev": "webpack serve",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@types/react-redux": "^7.1.24",
+    "@types/styled-components": "^5.1.25",
+    "@types/jest": "^27.5.0",
+    "@types/jwt-decode": "^3.1.0",
+    "@types/node": "^16.11.33",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "@types/redux-logger": "^3.0.9",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0"
+  }
+}
+```
