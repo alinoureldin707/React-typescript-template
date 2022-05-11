@@ -6,6 +6,7 @@ This template was made as default template for all react typescript projects. It
 
 ```sh
   npm install
+  with node version : v16.13.2
 ```
 
 ## `Structure`
